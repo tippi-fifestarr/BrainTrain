@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Memorizer</title>
+</head>
+<body onload="fromLoadTimer()">
+  <header>
+    <h1>Welcome!</h1>
+    <h2>Please read the text below</h2>
+  </header>
+  <div id="thetext">
+    <p id="ptext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga animi maiores molestiae odit! Blanditiis mollitia, molestiae, sapiente quis rerum totam eum, culpa illo qui rem consequatur? Tempora tenetur necessitatibus rem!</p>
+    <button onclick="doneFunc()">DONE READING</button>
+  </div>
+  <div>
+    <form action="">
+      <label for="words">Type as many words as you can remember from what you read.</label>
+      <input id="words" type="text" placeholder="Type as many words as you can remember from what you read">
+      <button type="submit" onclick="compareWords()">Submit</button>
+    </form>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+<!-- Welcome Text
+After you press the done button, the text will go away. It will be replaced by an opportunity, a challenge, if you will.  You will recieve a reward of 16 (s). 
+The purpose of this all is to train your brain, build mental muscles, and, of course, to have a blast.
+(bomb icon with (s))
+[Done]
+
+
+//clear screen -->
