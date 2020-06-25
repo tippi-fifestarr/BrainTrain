@@ -1,6 +1,13 @@
-//fetch the json file
+// console.log(localStorage)
+
 const paragraphsArray = [];
+let sec = 0;
+//get the done value from loval storage if it exists, otherwise set it to 0
+let done = localStorage.getItem('Done') || 0;
 let randomPar;
+
+
+//fetch the json file
 fetch('/Brain Train/paragraphs.json')
   .then(resp => resp.json())
   .then(data => {
@@ -9,19 +16,8 @@ fetch('/Brain Train/paragraphs.json')
       paragraphsArray.push(par);
     });
     randomPar = paragraphsArray[Math.floor(Math.random() * paragraphsArray.length)]
-    // console.log(Math.floor(Math.random() * paragraphsArray.length))
-    console.log(randomPar)
     document.getElementById("ptext").innerHTML = randomPar
   })
-
-
-let sec = 0;
-let done = 0;
-
-// const initialParagraph = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga animi maiores molestiae odit! Blanditiis mollitia, molestiae, sapiente quis rerum totam eum, culpa illo qui rem consequatur? Tempora tenetur necessitatibus rem!`
-// const initialParagraph = `When you finish reading, press the done button; The text will go away. <br> It will be replaced by an opportunity, a challenge, if you will.  <br> You will recieve a reward of 16 (s). <br> The purpose of this all is to train your brain, build mental muscles, and, of course, to have a blast.`
-// document.getElementById("ptext").innerHTML = initialParagraph
-
 
 const fromLoadTimer = () => {
   var timer = setInterval(function(){
@@ -34,8 +30,10 @@ const fromLoadTimer = () => {
   }, 1000);
 }
 
+//function that calls when user finishes reading the text
 const doneFunc = () => {
   const element = document.getElementById("ptext");
+  //if there isnt an element, because it has already been deleted, dont try to delete again
   if (element != null) {
     element.remove()
   }
@@ -51,17 +49,19 @@ const doneFunc = () => {
   }
 
   document.getElementById("thetext").appendChild(displayTimer)
-  // console.log(sec)
   done++;
-
+  //add done variable to local storage
+  localStorage.setItem("Done", done)
   console.log(done)
+  console.log(localStorage)
 }
 
 const compareWords = () => {
   let userWords = document.getElementById("words").value
+  console.log("userwords", userWords)
   const wordsArr = userWords.split(` `)
   const randomParArray = randomPar.split(` `)
-
+  let correctWords = localStorage.getItem('Correct') || 0;
   //compare wordsArr with initialParagraph
   for (i = 0; i < wordsArr.length; i++) {
     for (j = 0; j < randomParArray.length;j++){
@@ -69,11 +69,20 @@ const compareWords = () => {
         console.log("MATCH!!!!!", wordsArr[i], j)
         let match = wordsArr[i]
         document.getElementById("results").textContent += match + ` `
+        if (userWords !== 0){
+          correctWords++
+          document.getElementById("correctWordsCounter").innerHTML = `Correctly remembered words TOTAL: ${correctWords}`
+        }
+        console.log("number correct", correctWords)
       }
     }
   }
-
-
-  console.log(wordsArr)
+  localStorage.setItem("Correct", correctWords)
+  console.log(localStorage)
 }
 
+const clearLocal = () => {
+  localStorage.clear()
+  document.getElementById("results").textContent = ` `
+  document.getElementById("correctWordsCounter").innerHTML = `Correctly remembered words TOTAL: 0`
+}
