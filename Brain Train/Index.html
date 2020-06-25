@@ -12,16 +12,17 @@
     <h2>Please read the text below</h2>
   </header>
   <div id="thetext">
-    <p id="ptext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga animi maiores molestiae odit! Blanditiis mollitia, molestiae, sapiente quis rerum totam eum, culpa illo qui rem consequatur? Tempora tenetur necessitatibus rem!</p>
+    <p id="ptext"></p>
     <button onclick="doneFunc()">DONE READING</button>
   </div>
   <div>
-    <form action="">
-      <label for="words">Type as many words as you can remember from what you read.</label>
-      <input id="words" type="text" placeholder="Type as many words as you can remember from what you read">
-      <button type="submit" onclick="compareWords()">Submit</button>
-    </form>
+    <p>Type as many words as you can remember from what you read.</p>
+    <input id="words" type="text" placeholder="Type as many words as you can remember from what you read">
+    <button onclick="compareWords()">How much did I remember?</button>
   </div>
+  <h2><div id="results">
+  </div></h2>
+
   <script src="script.js"></script>
 </body>
 </html>
