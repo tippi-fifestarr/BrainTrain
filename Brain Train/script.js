@@ -36,6 +36,7 @@ const doneFunc = () => {
   //if there isnt an element, because it has already been deleted, dont try to delete again
   if (element != null) {
     element.remove()
+    document.getElementById("done-reading-button").remove()
   }
 
   const displayTimer = document.createElement("p")
@@ -49,6 +50,7 @@ const doneFunc = () => {
   }
 
   document.getElementById("thetext").appendChild(displayTimer)
+  document.getElementById("input-box").classList.add("shown")
   done++;
   //add done variable to local storage
   localStorage.setItem("Done", done)
@@ -78,6 +80,9 @@ const compareWords = () => {
     }
   }
   localStorage.setItem("Correct", correctWords)
+  
+  document.getElementById("input-box").remove()
+  document.getElementById("results-box").classList.add("shown")
   console.log(localStorage)
 }
 

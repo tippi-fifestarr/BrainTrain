@@ -13,21 +13,22 @@
   </header>
   <div id="thetext">
     <p id="ptext"></p>
-    <button onclick="doneFunc()">CLICK HERE WHEN DONE READING</button>
+    <button id="done-reading-button" onclick="doneFunc()">CLICK HERE WHEN DONE READING</button>
   </div>
-  <div class="input-box">
+  <div id="input-box" class="input-box">
     <p>Type as many words as you can remember from what you read.</p>
     <input id="words" type="text" placeholder="Type as many words as you can remember from what you read">
     <button onclick="compareWords()">Check how much did I remember</button>
   </div>
-  <div id="correctWordsCounter">Correctly remembered words TOTAL: 0</div>
-  <div id="results"></div>
+  <div id="results-box" class="results-box">
+    <div id="correctWordsCounter">Correctly remembered words TOTAL: 0</div>
+    <div id="results"></div>
+  </div>
   <button onclick="clearLocal()">clear local storage</button>
 
   <script src="script.js"></script>
 </body>
 </html>
-
 
 <!-- Welcome Text
 After you press the done button, the text will go away. It will be replaced by an opportunity, a challenge, if you will.  You will recieve a reward of 16 (s). 

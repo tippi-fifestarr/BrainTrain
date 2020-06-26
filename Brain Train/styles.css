@@ -12,7 +12,7 @@
 
 .input-box {
   margin: 10px;
-  display: flex;
+  display: none;
   flex-direction: column;
   width: 40vw;
   /* align-items: center; */
@@ -25,4 +25,12 @@
 .input-box button {
 
   width: 50%
+}
+.results-box {
+  display: none;
+  flex-direction: column;
+  width: 40vw;
+}
+.shown {
+  display: flex;
 }
