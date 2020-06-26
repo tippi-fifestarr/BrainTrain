@@ -1,6 +1,36 @@
-p {
+/* p {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+} */
+#ptext {
+  border: 1px solid black;
+  padding: 10px;
+  width: 40vw;
+}
+
+.input-box {
+  margin: 10px;
+  display: none;
+  flex-direction: column;
+  width: 40vw;
+  /* align-items: center; */
+
+}
+#words {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.input-box button {
+
+  width: 50%
+}
+.results-box {
+  display: none;
+  flex-direction: column;
+  width: 40vw;
+}
+.shown {
+  display: flex;
 }
