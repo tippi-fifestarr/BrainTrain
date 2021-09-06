@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/91bcd11295.js" crossorigin="anonymous"></script>
+  <title>insta-graph</title>
+</head>
+<body onload="fromLoadTimer()">
+  <header>
+    <h1>Welcome!</h1>
+    <h2>Input a number 0-10 for each word. You have less than 30 seconds!</h2>
+  </header>
+  <div id="thetext">
+    <p id="ptext"></p>
+    <button id="done-reading-button" onclick="doneFunc()">CLICK HERE WHEN DONE READING</button>
+  </div>
+  <div id="input-box" class="input-box">
+    <p>Type as many words as you can remember from what you read.</p>
+    <input id="words" type="text" placeholder="Type as many words as you can remember from what you read">
+    <button onclick="compareWords()">Check how much did I remember</button>
+  </div>
+  <div id="results-box" class="results-box">
+    <div id="correctWordsCounter">Correctly remembered words TOTAL: 0</div>
+    <div id="results"></div>
+  </div>
+  <button onclick="clearLocal()">clear local storage</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+<!-- Welcome Text
+After you press the done button, the text will go away. It will be replaced by an opportunity, a challenge, if you will.  You will recieve a reward of 16 (s). 
+The purpose of this all is to train your brain, build mental muscles, and, of course, to have a blast.
+(bomb icon with (s))
+[Done]
+
+
+//clear screen -->
+
+
+<canvas id="pie-chart" width="auto" height="150"></canvas>

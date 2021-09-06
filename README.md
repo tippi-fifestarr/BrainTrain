@@ -1,3 +1,12 @@
+## Fun adaptation
+>word salad page
+
+present an array of words, one at a time and capture a #value from 0-10  for each one (while adding up the the totals).
+
+>goal is 30 seconds for 10 words, then create a pie chart out of the data
+
+title: this took me ___ seconds to create on graph-a-gram
+
 # BrainTrain
 Dynamically create and remove text, buttons that do stuff, timer, possible average (sec/done), recall matching check.
 
@@ -22,3 +31,5 @@ My future goals:
   c. total time recalling (or a countdown timer for this)
   d. average
   
+## https://www.w3schools.com/HTML/html_quiz.asp
+see the video in videos folder.
